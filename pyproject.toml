@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "APIREST-FASTAPI"
+version = "0.1.0"
+description = "API RESTful with FastAPI"
+authors = ["Markos96"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.68.0"
+uvicorn = "^0.15.0"
+SQLAlchemy = "^1.4.22"
