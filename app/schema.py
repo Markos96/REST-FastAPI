@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Union
 from pydantic import BaseModel
 
 
@@ -24,3 +25,10 @@ class UserUpdate(BaseModel):
     name: str = None
     age: int = None
     address: str = None
+
+
+class Login(BaseModel):
+    username: str
+    password: str
+
+
