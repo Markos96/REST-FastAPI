@@ -10,6 +10,7 @@ router = APIRouter(
 )
 
 
+# 1 Main method security API
 @router.post('/', status_code=status.HTTP_200_OK)
 def login(usuario: Login, db: Session = Depends(get_db)):
     return auth.auth_user(usuario, db)

@@ -5,6 +5,7 @@ from app.hashing import Hash
 from app.token import generate_access_token
 
 
+# 2 Authenticated credentials
 def auth_user(user, db: Session):
     usuario = user.dict()
     user = db.query(models.User).filter(models.User.username == usuario["username"]).first()

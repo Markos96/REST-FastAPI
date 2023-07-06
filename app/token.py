@@ -4,6 +4,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi import Depends, status, HTTPException
 
 
+# 3 Create access token
 def generate_access_token(username: str):
     payload = {"username": username}
 
@@ -12,9 +13,9 @@ def generate_access_token(username: str):
     return token
 
 
-def verify_token(credentials: HTTPAuthorizationCredentials = Depends(HTTPBearer())):
+# 4 Validate token provided
+def validate_token(credentials: HTTPAuthorizationCredentials = Depends(HTTPBearer())):
     token = credentials.credentials
-
     try:
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
     except jwt.InvalidTokenError:
